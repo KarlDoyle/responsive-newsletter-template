@@ -15,9 +15,9 @@
         "menu-title" : "Menu Item",
 
         "h1": "Example Title",
-        "p" :"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni sunt asperiores veniam debitis laudantium quod fugit dolores ea nobis officia cupiditate quibusdam nesciunt mollitia vitae, sit natus fugiat officiis, explicabo aliquam voluptatum deserunt dignissimos a reiciendis laboriosam? Neque ratione quod labore est sint repellendus, quaerat eaque, qui veniam architecto tenetur eos perferendis quisquam nesciunt odit autem at non. Quos quasi dolorum iste hic minus nulla possimus soluta error, animi aliquam. Officia quis et, veniam cum at maiores, numquam eos assumenda voluptatum, tempore magnam hic aliquam error laudantium, rerum in fuga. Labore eaque modi voluptas voluptates eos, non voluptatibus repudiandae cum animi ullam, veniam ipsum magni dicta eveniet et! Modi, et ut sequi nobis quaerat perferendis aliquam dolorum corrupti debitis vero consectetur voluptatibus. Soluta dolore accusantium sapiente enim molestiae ea adipisci, sequi id.",
+        "p" :"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni sunt asperiores veniam debitis laudantium quod fugit dolores ea nobis officia cupiditate quibusdam nesciunt mollitia vitae, sit natus fugiat officiis, explicabo aliquam voluptatum deserunt dignissimos a reiciendis laboriosam? Neque ratione quod labore est sint repellendus, quaerat eaque, qui veniam architecto tenetur eos perferendis quisquam nesciunt odit autem at non. Quos quasi dolorum iste hic minus nulla possimus soluta error, animi aliquam.",
 
-
+        "body-bg-color": "background-color:black;",
         "font-family": "font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;",
         "link-color": "blue",
         "img-css": "outline:none; text-decoration:none; -ms-interpolation-mode: bicubic;",

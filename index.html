@@ -28,23 +28,33 @@
         /* End reset */
 
 
-        /* Some sensible defaults for images
-        Bring inline: Yes. */
-        img {outline:none; text-decoration:none; -ms-interpolation-mode: bicubic;}
-        a img {border:none;}
-        .image_fix {display:block;}
+        /*
+
+        Some sensible defaults for images
+        ---------------------------------
+
+        img {{img-css}}
+        a img {{img-link-css}}
+        .image_fix {{img-fix-css}}
 
 
-        /* Yahoo paragraph fix
-        Bring inline: Yes. */
-        p {margin: 1em 0;}
+        Yahoo paragraph fix
+        -------------------
+        p {{yahoo-p-fix}}
 
 
-        /* Hotmail header color reset
-        Bring inline: Yes. */
-        h1, h2, h3, h4, h5, h6 {color: black !important;}
+        Hotmail header color reset
+        -------------------------------------
+        h1, h2, h3, h4, h5, h6 {{title-color}}
+        h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {{title-link-color}}
 
-        h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {color: blue !important;}
+
+        Remove spacing around Outlook 07, 10 tables
+        -------------------------------------------
+        table {{table-fix}}
+
+        */
+
 
         h1 a:active, h2 a:active,  h3 a:active, h4 a:active, h5 a:active, h6 a:active {
         color: red !important; /* Preferably not the same color as the normal header link color.  There is limited support for psuedo classes in email clients, this was added just for good measure. */
@@ -58,9 +68,7 @@
         Bring inline: No.*/
         table td {border-collapse: collapse;}
 
-        /* Remove spacing around Outlook 07, 10 tables
-        Bring inline: Yes */
-        table { border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; }
+
 
         /* Styling your links has become much simpler with the new Yahoo.  In fact, it falls in line with the main credo of styling in email and make sure to bring your styles inline.  Your link colors will be uniform across clients when brought inline.
         Bring inline: Yes. */
@@ -159,13 +167,13 @@
 <script id="template" type="text/template">
 
 <!-- Wrapper/Container Table: Use a wrapper table to control the width and the background color consistently of your email. Use this approach instead of setting attributes on the body tag. -->
-<table cellpadding="0" cellspacing="0" border="0" id="backgroundTable" style="{{font-family}} {{body-bg-color}}">
+<table {{table-default}} id="backgroundTable" style="{{font-family}} {{body-bg-color}} {{table-fix}}">
     <tr>
         <td valign="top">
 
 
 
-        <table cellpadding="0" cellspacing="0" border="0" align="center">
+        <table {{table-default}} align="center" style="{{table-fix}}">
             <tr>
                 <td width="600" valign="top" align="center">
                     {{share-text}}:*|SHARE:facebook,twitter|* |
@@ -177,65 +185,58 @@
         </table>
 
 
-        <table cellpadding="0" cellspacing="0" border="0" align="center">
+        <table {{table-default}} align="center" style="{{table-fix}}">
             <tr>
-                <td width="200" valign="top">
-                </td>
-                <td width="200" valign="top">
-                    <a href="" title="" >
-                        <img src="http://placehold.it/200x150/333333&text=Logo" alt="" style="{{img-css}} {{img-fix-css}} {{img-link-css}}">
+                {{#logo}}
+                <td width="{{width}}" height="{{height}}" valign="top">
+                    <a href="{{link}}{{campaign}}" title="{{title}}" >
+                        <img src="{{path}}{{img}}" alt="{{title}}" width="{{width}}" height="{{height}}" style="{{img-css}} {{img-fix-css}} {{img-link-css}}">
                     </a>
                 </td>
-                <td width="200" valign="top">
-                </td>
+                {{/logo}}
             </tr>
             <tr height="20"></tr>
         </table>
 
 
-        <table cellpadding="0" cellspacing="0" border="0" align="center">
+        <table {{table-default}} align="center" style="{{table-fix}}">
             <tr>
-                <td width="100" valign="top">
-                    <a href="{{menu-link}}{{campaign}}" title="{{menu-title}}" style="{{menu-link-css}};">{{menu-title}}</a>
+                {{#menu}}
+                <td width="{{width}}" valign="top">
+                    <a href="{{link}}{{campaign}}" title="{{title}}" style="{{menu-link-css}}">{{title}}</a>
                 </td>
-                <td width="100" valign="top">
-                    <a href="{{menu-link}}{{campaign}}" title="{{menu-title}}" style="{{menu-link-css}};">{{menu-title}}</a>
-                </td>
-                <td width="100" valign="top">
-                    <a href="{{menu-link}}{{campaign}}" title="{{menu-title}}" style="{{menu-link-css}};">{{menu-title}}</a>
-                </td>
-                <td width="100" valign="top">
-                    <a href="{{menu-link}}{{campaign}}" title="{{menu-title}}" style="{{menu-link-css}};">{{menu-title}}</a>
-                </td>
-                <td width="100" valign="top">
-                    <a href="{{menu-link}}{{campaign}}" title="{{menu-title}}" style="{{menu-link-css}};">{{menu-title}}</a>
-                </td>
-                <td width="100" valign="top">
-                    <a href="{{menu-link}}{{campaign}}" title="{{menu-title}}" style="{{menu-link-css}};">{{menu-title}}</a>
-                </td>
+                {{/menu}}
             </tr>
             <tr height="20"></tr>
         </table>
 
 
-        <table cellpadding="0" cellspacing="0" border="0" align="center">
+        <table {{table-default}} align="center" style="{{table-fix}}">
+            {{#slide}}
             <tr>
-                <td width="600" valign="top">
-                    <a href="" title="" >
-                        <img src="{{img-one}}" alt="" width="x" height="x" style="{{img-css}} {{img-fix-css}} {{img-link-css}}">
+                <td width="{{width}}" valign="top">
+                    <a href="{{link}}{{campaign}}" title="{{title}}">
+                        <img src="{{path}}{{img}}" alt="{{title}}" width="{{width}}" height="{{height}}" style="{{img-css}} {{img-fix-css}} {{img-link-css}}">
                     </a>
                 </td>
             </tr>
             <tr height="20"></tr>
+            {{/slide}}
         </table>
 
 
-        <table cellpadding="0" cellspacing="0" border="0" align="center">
+        <table {{table-default}} align="center" style="{{table-fix}}">
             <tr>
                 <td width="40" valign="top"></td>
                 <td width="520" valign="top" style="text-align:center;">
-                    <h1>{{h1}}</h1>
-                    <p>{{p}}</p>
+                    {{#text-section}}
+                    {{#title}}
+                    {{/title}}
+                    {{#title}}
+                    <h1>{{title}}</h1>
+                    {{/title}}
+                    <p style="{{yahoo-p-fix}}">{{paragraph}}</p>
+                    {{/text-section}}
                 </td>
                 <td width="40" valign="top"></td>
             </tr>
@@ -244,16 +245,16 @@
 
 
 
-        <table cellpadding="0" cellspacing="0" border="0" align="center">
+        <table {{table-default}} align="center" style="{{table-fix}}">
             <tr>
                 <td width="300" valign="top">
                     <a href="" title="" >
-                        <img src="{{img-two}}" alt="" width="x" height="x" style="{{img-css}} {{img-fix-css}} {{img-link-css}}">
+                        <img src="{{path}}{{img-two}}" alt="" width="x" height="x" style="{{img-css}} {{img-fix-css}} {{img-link-css}}">
                     </a>
                 </td>
                 <td width="300" valign="top">
                     <a href="" title="" >
-                        <img src="{{img-three}}" alt="" width="x" height="x" style="{{img-css}} {{img-fix-css}} {{img-link-css}}">
+                        <img src="{{path}}{{img-three}}" alt="" width="x" height="x" style="{{img-css}} {{img-fix-css}} {{img-link-css}}">
                     </a>
                 </td>
             </tr>
@@ -263,7 +264,7 @@
 
 
 
-        <table cellpadding="0" cellspacing="0" border="0" align="center">
+        <table {{table-default}} align="center" style="{{table-fix}}">
             <tr>
                 <td width="40" valign="top"></td>
                 <td width="240" valign="top">

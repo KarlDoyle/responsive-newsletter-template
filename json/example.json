@@ -1,6 +1,6 @@
 {
     "example": {
-        "ftp": "",
+        "path": "",
         "campaign": "/google-analytics",
         "share-text": "Share",
         "view-in-browser-text": "View in browser",
@@ -10,20 +10,85 @@
         "img-two": "http://placehold.it/300x300/efefef/333333",
         "img-three": "http://placehold.it/300x300/333333/efefef",
 
+        "logo" : [
+            {
+                "img" : "http://placehold.it/200x150/333333&text=Logo",
+                "link" : "www.karldoyle.ie",
+                "title" : "test",
+                "height" : "150",
+                "width" : "200"
+            }
+        ],
 
-        "menu-link" : "foo.com",
-        "menu-title" : "Menu Item",
+        "slide" : [
+            {
+                "img" : "http://placehold.it/600x300/333333",
+                "link" : "www.karldoyle.ie",
+                "title" : "test",
+                "height" : "300",
+                "width" : "600"
+            }, {
+                "img" : "http://placehold.it/600x300",
+                "link" : "www.karldoyle.ie",
+                "title" : "test",
+                "height" : "300",
+                "width" : "600"
+            }
+        ],
 
-        "h1": "Example Title",
-        "p" :"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni sunt asperiores veniam debitis laudantium quod fugit dolores ea nobis officia cupiditate quibusdam nesciunt mollitia vitae, sit natus fugiat officiis, explicabo aliquam voluptatum deserunt dignissimos a reiciendis laboriosam? Neque ratione quod labore est sint repellendus, quaerat eaque, qui veniam architecto tenetur eos perferendis quisquam nesciunt odit autem at non. Quos quasi dolorum iste hic minus nulla possimus soluta error, animi aliquam.",
+        "menu" : [
+            {
+                "title" : "menu name",
+                "link" : "www.karldoyle.ie",
+                "width" : "100"
+            }, {
+                "title" : "menu name",
+                "link" : "www.karldoyle.ie",
+                "width" : "100"
+            }, {
+                "title" : "menu name",
+                "link" : "www.karldoyle.ie",
+                "width" : "100"
+            }, {
+                "title" : "menu name",
+                "link" : "www.karldoyle.ie",
+                "width" : "100"
+            }, {
+                "title" : "menu name",
+                "link" : "www.karldoyle.ie",
+                "width" : "100"
+            }, {
+                "title" : "menu name",
+                "link" : "www.karldoyle.ie",
+                "width" : "100"
+            }
+        ],
+
+        "text-section" : [
+            {
+                "title": "Example Title",
+                "paragraph" :"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni sunt asperiores veniam debitis laudantium quod fugit dolores ea nobis officia cupiditate quibusdam nesciunt mollitia vitae, sit natus fugiat officiis"
+            },
+            {
+                "paragraph" :"explicabo aliquam voluptatum deserunt dignissimos a reiciendis laboriosam? Neque ratione quod labore est sint repellendus, quaerat eaque, qui veniam architecto tenetur eos perferendis quisquam nesciunt odit autem at non. Quos quasi dolorum iste hic minus nulla possimus soluta error, animi aliquam."
+            }
+        ],
+
+
 
         "body-bg-color": "background-color:black;",
         "font-family": "font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;",
         "link-color": "blue",
+
+        "title-color": "color: black !important;",
+        "title-link-color":"color: blue !important;",
+        "table-default" : "cellpadding='0' cellspacing='0' border='0'",
+        "table-fix" : "border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;",
+        "yahoo-p-fix": "margin: 1em 0;",
         "img-css": "outline:none; text-decoration:none; -ms-interpolation-mode: bicubic;",
         "img-link-css": "border:none;",
         "img-fix-css": "display:block;",
-        "menu-link-css": "padding:10px;text-decoration:none;color:red;display:block;"
+        "menu-link-css": "padding:10px;text-decoration:none;color:red;display:block;text-align:center;"
 
     }
 }

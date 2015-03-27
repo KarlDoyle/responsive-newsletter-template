@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Your Message Subject or Title</title>
     <style type="text/css">
-
+/*
         * { background-color: rgba(255,0,0,.2); }
         * * { background-color: rgba(0,255,0,.2); }
         * * * { background-color: rgba(0,0,255,.2); }
         * * * * { background-color: rgba(255,0,255,.2); }
-        * * * * * { background-color: rgba(0,255,255,.2); }
+        * * * * * { background-color: rgba(0,255,255,.2); }*/
 
 
         /* Based on The MailChimp Reset INLINE: Yes. */
@@ -66,7 +66,7 @@
 
         /* Outlook 07, 10 Padding issue fix
         Bring inline: No.*/
-        table td {border-collapse: collapse;}
+        table td {border-collapse: collapse; border:0;}
 
 
 
@@ -96,6 +96,30 @@
                         cursor: default;
                     }
 
+        }
+
+        @media only screen and (max-width: 480px) {
+
+            body[yahoo] {
+              padding: 10px;
+              box-sizing: border-box;
+            }
+            body[yahoo] table {
+                width: 100%;
+            }
+            body[yahoo] table tr {
+                width: 100%;
+            }
+            body[yahoo] table td {
+                width: 100%;
+                display: block;
+            }
+            body[yahoo] table img {
+                max-width: 100%;
+                height: auto;
+                display: block;
+                margin: 0 auto;
+            }
         }
 
         /* More Specific Targeting */
@@ -161,24 +185,25 @@
 
 
 </head>
-<body>
+<body yahoo="true" style="background-color:#ffffff;">
 
 <!-- Wrap contents in a script tag for mustach.js to work -->
 <script id="template" type="text/template">
 
 <!-- Wrapper/Container Table: Use a wrapper table to control the width and the background color consistently of your email. Use this approach instead of setting attributes on the body tag. -->
-<table {{table-default}} id="backgroundTable" style="{{font-family}} {{body-bg-color}} {{table-fix}}">
+<table {{table-default}} id="backgroundTable" style="{{font-family}} {{table-fix}}">
     <tr>
         <td valign="top">
 
 
 
         <table {{table-default}} align="center" style="{{table-fix}}">
+            <tr height="20"></tr>
             <tr>
-                <td width="600" valign="top" align="center">
+                <td width="600" valign="top" align="center" style="font-size:12px;">
                     {{share-text}}:*|SHARE:facebook,twitter|* |
-                    <a href="*|ARCHIVE|*" target="_blank" style="color: {{link-color}};">{{view-in-browser-text}}</a> |
-                    <a href="*|UPDATE_PROFILE|*" target="_blank" style="color: {{link-color}};">{{change-language-text}}</a>
+                    <a href="*|ARCHIVE|*" target="_blank" style="color: {{link-color}}; font-size:12px;">{{view-in-browser-text}}</a> |
+                    <a href="*|UPDATE_PROFILE|*" target="_blank" style="color: {{link-color}}; font-size:12px;">{{change-language-text}}</a>
                 </td>
             </tr>
             <tr height="20"></tr>
@@ -189,7 +214,7 @@
             <tr>
                 {{#logo}}
                 <td width="{{width}}" height="{{height}}" valign="top">
-                    <a href="{{link}}{{campaign}}" title="{{title}}" >
+                    <a id="logo" href="{{link}}{{campaign}}" title="{{title}}" >
                         <img src="{{path}}{{img}}" alt="{{title}}" width="{{width}}" height="{{height}}" style="{{img-css}} {{img-fix-css}} {{img-link-css}}">
                     </a>
                 </td>
@@ -199,33 +224,7 @@
         </table>
 
 
-        <table {{table-default}} align="center" style="{{table-fix}}">
-            <tr>
-                {{#menu}}
-                <td width="{{width}}" valign="top">
-                    <a href="{{link}}{{campaign}}" title="{{title}}" style="{{menu-link-css}}">{{title}}</a>
-                </td>
-                {{/menu}}
-            </tr>
-            <tr height="20"></tr>
-        </table>
-
-
-        <table {{table-default}} align="center" style="{{table-fix}}">
-            {{#slide}}
-            <tr>
-                <td width="{{width}}" valign="top">
-                    <a href="{{link}}{{campaign}}" title="{{title}}">
-                        <img src="{{path}}{{img}}" alt="{{title}}" width="{{width}}" height="{{height}}" style="{{img-css}} {{img-fix-css}} {{img-link-css}}">
-                    </a>
-                </td>
-            </tr>
-            <tr height="20"></tr>
-            {{/slide}}
-        </table>
-
-
-        <table {{table-default}} align="center" style="{{table-fix}}">
+        <table {{table-default}} align="center" style="{{table-fix}} {{table-bg-color}}">
             <tr>
                 <td width="40" valign="top"></td>
                 <td width="520" valign="top" style="text-align:center;">
@@ -244,48 +243,19 @@
         </table>
 
 
-
-        <table {{table-default}} align="center" style="{{table-fix}}">
+        <table {{table-default}} align="center" style="{{table-fix}} {{table-bg-color}}">
+            {{#slide}}
             <tr>
-                <td width="300" valign="top">
-                    <a href="" title="" >
-                        <img src="{{path}}{{img-two}}" alt="" width="x" height="x" style="{{img-css}} {{img-fix-css}} {{img-link-css}}">
-                    </a>
-                </td>
-                <td width="300" valign="top">
-                    <a href="" title="" >
-                        <img src="{{path}}{{img-three}}" alt="" width="x" height="x" style="{{img-css}} {{img-fix-css}} {{img-link-css}}">
+                <td width="{{width}}" valign="top">
+                    <a href="{{link}}{{campaign}}" title="{{title}}">
+                        <img src="{{path}}{{img}}" alt="{{title}}" width="{{width}}" height="{{height}}" style="{{img-css}} {{img-fix-css}} {{img-link-css}}">
                     </a>
                 </td>
             </tr>
             <tr height="20"></tr>
+            {{/slide}}
         </table>
 
-
-
-
-        <table {{table-default}} align="center" style="{{table-fix}}">
-            <tr>
-                <td width="40" valign="top"></td>
-                <td width="240" valign="top">
-                    <ul>
-                       <li><a href="#">Lorem ipsum dolor</a></li>
-                       <li><a href="#">Aliquam tincidunt.</a></li>
-                       <li><a href="#">Vestibulum auctor.</a></li>
-                    </ul>
-                </td>
-                <td width="40" valign="top"></td>
-                <td width="240" valign="top">
-                    <ul>
-                       <li>Lorem sit amet</li>
-                       <li>Aliqua eu risus.</li>
-                       <li>Vestib neque.</li>
-                    </ul>
-                </td>
-                <td width="40" valign="top"></td>
-            </tr>
-            <tr height="20"></tr>
-        </table>
 
 
         </td>

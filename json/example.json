@@ -27,12 +27,6 @@
                 "title" : "test",
                 "height" : "300",
                 "width" : "600"
-            }, {
-                "img" : "http://placehold.it/600x300",
-                "link" : "www.karldoyle.ie",
-                "title" : "test",
-                "height" : "300",
-                "width" : "600"
             }
         ],
 

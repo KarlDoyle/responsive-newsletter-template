@@ -6,25 +6,25 @@
     <title>Your Message Subject or Title</title>
     <style type="text/css">
 
-        * { background-color: rgba(255,0,0,.2); }
+/*        * { background-color: rgba(255,0,0,.2); }
         * * { background-color: rgba(0,255,0,.2); }
         * * * { background-color: rgba(0,0,255,.2); }
         * * * * { background-color: rgba(255,0,255,.2); }
-        * * * * * { background-color: rgba(0,255,255,.2); }
+        * * * * * { background-color: rgba(0,255,255,.2); }*/
 
 
         /* Based on The MailChimp Reset INLINE: Yes. */
         /* Client-specific Styles */
         #outlook a {padding:0;} /* Force Outlook to provide a "view in browser" menu link. */
 
-        body{width:100% !important; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; margin:0; padding:0;}
+        body{width:100% !important; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; margin:0; padding:0; font-family: 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;}
 
         /* Prevent Webkit and Windows Mobile platforms from changing default font sizes.*/
         .ExternalClass {width:100%;} /* Force Hotmail to display emails at full width */
         .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: 100%;}
 
         /* Forces Hotmail to display normal line spacing.  More on that: http://www.emailonacid.com/forum/viewthread/43/ */
-        #backgroundTable {margin:0; padding:0; width:100% !important; line-height: 100% !important;}
+        #backgroundTable {margin:20px 0; padding:0; width:100% !important; line-height: 100% !important;}
         /* End reset */
 
 
@@ -54,7 +54,14 @@
         table {{table-fix}}
 
         */
-
+        h1, h2, h3 {
+            font-family: 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 24px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 500;
+            line-height: 26.3999996185303px;
+        }
 
         h1 a:active, h2 a:active,  h3 a:active, h4 a:active, h5 a:active, h6 a:active {
         color: red !important; /* Preferably not the same color as the normal header link color.  There is limited support for psuedo classes in email clients, this was added just for good measure. */
@@ -66,7 +73,7 @@
 
         /* Outlook 07, 10 Padding issue fix
         Bring inline: No.*/
-        table td {border-collapse: collapse;}
+        table td {border-collapse: collapse; border:0;}
 
 
 
@@ -167,28 +174,28 @@
 <script id="template" type="text/template">
 
 <!-- Wrapper/Container Table: Use a wrapper table to control the width and the background color consistently of your email. Use this approach instead of setting attributes on the body tag. -->
-<table {{table-default}} id="backgroundTable" style="{{font-family}} {{body-bg-color}} {{table-fix}}">
+<table {{table-default}} id="backgroundTable" style="{{font-family}}  {{table-fix}}">
     <tr>
-        <td valign="top">
+        <td border-collapse: collapse;border:0; valign="top">
 
 
 
         <table {{table-default}} align="center" style="{{table-fix}}">
             <tr>
-                <td width="600" valign="top" align="center">
-                    {{share-text}}:*|SHARE:facebook,twitter|* |
+                <td border-collapse: collapse;border:0; width="600" valign="middle" align="center">
+                    <p style="{{yahoo-p-fix}} font-size: 10px;">{{share-text}}:*|SHARE:facebook,twitter|* |
                     <a href="*|ARCHIVE|*" target="_blank" style="color: {{link-color}};">{{view-in-browser-text}}</a> |
                     <a href="*|UPDATE_PROFILE|*" target="_blank" style="color: {{link-color}};">{{change-language-text}}</a>
+                    </p>
                 </td>
             </tr>
-            <tr height="20"></tr>
         </table>
 
-
-        <table {{table-default}} align="center" style="{{table-fix}}">
+        <table {{table-default}} align="center" width="600" style="{{table-fix}} {{table-bg-color}}">
+            <tr height="20"></tr>
             <tr>
                 {{#logo}}
-                <td width="{{width}}" height="{{height}}" valign="top">
+                <td border-collapse: collapse;border:0; width="{{width}}" height="{{height}}" valign="top" align="{{align}}">
                     <a href="{{link}}{{campaign}}" title="{{title}}" >
                         <img src="{{path}}{{img}}" alt="{{title}}" width="{{width}}" height="{{height}}" style="{{img-css}} {{img-fix-css}} {{img-link-css}}">
                     </a>
@@ -199,36 +206,13 @@
         </table>
 
 
-        <table {{table-default}} align="center" style="{{table-fix}}">
+
+
+
+        <table {{table-default}} align="center" style="{{table-fix}} {{table-bg-color}}">
             <tr>
-                {{#menu}}
-                <td width="{{width}}" valign="top">
-                    <a href="{{link}}{{campaign}}" title="{{title}}" style="{{menu-link-css}}">{{title}}</a>
-                </td>
-                {{/menu}}
-            </tr>
-            <tr height="20"></tr>
-        </table>
-
-
-        <table {{table-default}} align="center" style="{{table-fix}}">
-            {{#slide}}
-            <tr>
-                <td width="{{width}}" valign="top">
-                    <a href="{{link}}{{campaign}}" title="{{title}}">
-                        <img src="{{path}}{{img}}" alt="{{title}}" width="{{width}}" height="{{height}}" style="{{img-css}} {{img-fix-css}} {{img-link-css}}">
-                    </a>
-                </td>
-            </tr>
-            <tr height="20"></tr>
-            {{/slide}}
-        </table>
-
-
-        <table {{table-default}} align="center" style="{{table-fix}}">
-            <tr>
-                <td width="40" valign="top"></td>
-                <td width="520" valign="top" style="text-align:center;">
+                <td border-collapse: collapse;border:0; width="40" valign="top"></td>
+                <td border-collapse: collapse;border:0; width="520" valign="top" style="text-align:center;">
                     {{#text-section}}
                     {{#title}}
                     {{/title}}
@@ -238,55 +222,37 @@
                     <p style="{{yahoo-p-fix}}">{{paragraph}}</p>
                     {{/text-section}}
                 </td>
-                <td width="40" valign="top"></td>
+                <td border-collapse: collapse;border:0; width="40" valign="top"></td>
             </tr>
             <tr height="20"></tr>
         </table>
 
-
-
-        <table {{table-default}} align="center" style="{{table-fix}}">
+        <table {{table-default}} align="center" style="{{table-fix}} {{table-bg-color}}">
+            {{#slide}}
+            <tr height="20"></tr>
             <tr>
-                <td width="300" valign="top">
-                    <a href="" title="" >
-                        <img src="{{path}}{{img-two}}" alt="" width="x" height="x" style="{{img-css}} {{img-fix-css}} {{img-link-css}}">
-                    </a>
-                </td>
-                <td width="300" valign="top">
-                    <a href="" title="" >
-                        <img src="{{path}}{{img-three}}" alt="" width="x" height="x" style="{{img-css}} {{img-fix-css}} {{img-link-css}}">
+                <td border-collapse: collapse;border:0; width="{{width}}" valign="top">
+                    <a href="{{link}}{{campaign}}" title="{{title}}">
+                        <img src="{{path}}{{img}}" alt="{{title}}" width="{{width}}" height="{{height}}" style="{{img-css}} {{img-fix-css}} {{img-link-css}}">
                     </a>
                 </td>
             </tr>
-            <tr height="20"></tr>
+            {{/slide}}
         </table>
 
 
-
-
-        <table {{table-default}} align="center" style="{{table-fix}}">
+        <table {{table-default}} align="center" style="{{table-fix}} {{table-bg-color}}">
+            {{#buttons}}
+            <tr height="20"></tr>
             <tr>
-                <td width="40" valign="top"></td>
-                <td width="240" valign="top">
-                    <ul>
-                       <li><a href="#">Lorem ipsum dolor</a></li>
-                       <li><a href="#">Aliquam tincidunt.</a></li>
-                       <li><a href="#">Vestibulum auctor.</a></li>
-                    </ul>
+                <td border-collapse: collapse;border:0; width="600" valign="top">
+                    <a href="{{link}}{{campaign}}" title="{{text}}" style="text-transform:uppercase;background-color:{{bgcolor}}; color:{{textcolor}}; text-decoration:none; padding-top:20px;padding-bottom:20px;text-align: center;display:block;">
+                        {{text}}
+                    </a>
                 </td>
-                <td width="40" valign="top"></td>
-                <td width="240" valign="top">
-                    <ul>
-                       <li>Lorem sit amet</li>
-                       <li>Aliqua eu risus.</li>
-                       <li>Vestib neque.</li>
-                    </ul>
-                </td>
-                <td width="40" valign="top"></td>
             </tr>
-            <tr height="20"></tr>
+            {{/buttons}}
         </table>
-
 
         </td>
     </tr>

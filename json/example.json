@@ -1,6 +1,6 @@
 {
     "example": {
-        "path": "",
+        "path": "http://placehold.it/",
         "campaign": "/google-analytics",
         "share-text": "Share",
         "view-in-browser-text": "View in browser",
@@ -12,55 +12,36 @@
 
         "logo" : [
             {
-                "img" : "http://placehold.it/200x150/333333&text=Logo",
+                "img" : "180x100/333333&text=Logo",
                 "link" : "www.karldoyle.ie",
                 "title" : "test",
-                "height" : "150",
-                "width" : "200"
+                "height" : "100",
+                "width" : "180",
+                "align": "center"
+            }, {
+                "img" : "180x100/444444&text=Logo",
+                "link" : "www.karldoyle.ie",
+                "title" : "test",
+                "height" : "100",
+                "width" : "180",
+                "align": "center"
+            }, {
+                "img" : "180x100/444444&text=Logo",
+                "link" : "www.karldoyle.ie",
+                "title" : "test",
+                "height" : "100",
+                "width" : "180",
+                "align": "center"
             }
         ],
 
         "slide" : [
             {
-                "img" : "http://placehold.it/600x300/333333",
+                "img" : "600x300/666666",
                 "link" : "www.karldoyle.ie",
                 "title" : "test",
                 "height" : "300",
                 "width" : "600"
-            }, {
-                "img" : "http://placehold.it/600x300",
-                "link" : "www.karldoyle.ie",
-                "title" : "test",
-                "height" : "300",
-                "width" : "600"
-            }
-        ],
-
-        "menu" : [
-            {
-                "title" : "menu name",
-                "link" : "www.karldoyle.ie",
-                "width" : "100"
-            }, {
-                "title" : "menu name",
-                "link" : "www.karldoyle.ie",
-                "width" : "100"
-            }, {
-                "title" : "menu name",
-                "link" : "www.karldoyle.ie",
-                "width" : "100"
-            }, {
-                "title" : "menu name",
-                "link" : "www.karldoyle.ie",
-                "width" : "100"
-            }, {
-                "title" : "menu name",
-                "link" : "www.karldoyle.ie",
-                "width" : "100"
-            }, {
-                "title" : "menu name",
-                "link" : "www.karldoyle.ie",
-                "width" : "100"
             }
         ],
 
@@ -74,16 +55,31 @@
             }
         ],
 
+        "buttons" : [
+            {
+                "link": "karldoyle.ie",
+                "text": "Lorem ipsum dolor.",
+                "bgcolor": "black",
+                "textcolor": "white"
+            }, {
+                "link": "karldoyle.ie",
+                "text": "Lorem ipsum dolor.",
+                "bgcolor": "green",
+                "textcolor": "black"
+            }
+        ],
 
 
-        "body-bg-color": "background-color:black;",
+
+        "table-bg-color": "background-color:#dddddd;",
         "font-family": "font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;",
         "link-color": "blue",
 
         "title-color": "color: black !important;",
         "title-link-color":"color: blue !important;",
+
         "table-default" : "cellpadding='0' cellspacing='0' border='0'",
-        "table-fix" : "border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;",
+        "table-fix" : "bordeR:0;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;",
         "yahoo-p-fix": "margin: 1em 0;",
         "img-css": "outline:none; text-decoration:none; -ms-interpolation-mode: bicubic;",
         "img-link-css": "border:none;",

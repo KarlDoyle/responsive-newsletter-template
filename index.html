@@ -17,17 +17,17 @@
         /* Client-specific Styles */
         #outlook a {padding:0;} /* Force Outlook to provide a "view in browser" menu link. */
 
-        body{width:100% !important; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; margin:0; padding:0; font-family: 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;}
+        body{width:100% !important; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; margin:0; padding:0; font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;}
 
         /* Prevent Webkit and Windows Mobile platforms from changing default font sizes.*/
         .ExternalClass {width:100%;} /* Force Hotmail to display emails at full width */
         .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: 100%;}
 
         /* Forces Hotmail to display normal line spacing.  More on that: http://www.emailonacid.com/forum/viewthread/43/ */
-        #backgroundTable {margin:20px 0; padding:0; width:100% !important; line-height: 100% !important;}
+        #backgroundTable {margin:50px auto; padding:0; width:100% !important; line-height: 100% !important;}
         /* End reset */
 
-
+        table table : box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
         /*
 
         Some sensible defaults for images
@@ -61,6 +61,7 @@
             font-variant: normal;
             font-weight: 500;
             line-height: 26.3999996185303px;
+            color: white;
         }
 
         h1 a:active, h2 a:active,  h3 a:active, h4 a:active, h5 a:active, h6 a:active {
@@ -82,85 +83,36 @@
         a {color: orange;}
 
 
-        /***************************************************
-        ****************************************************
-        MOBILE TARGETING
-        ****************************************************
-        ***************************************************/
-        @media only screen and (max-device-width: 480px) {
-            /* Part one of controlling phone number linking for mobile. */
-            a[href^="tel"], a[href^="sms"] {
-                        text-decoration: none;
-                        color: blue; /* or whatever your want */
-                        pointer-events: none;
-                        cursor: default;
-                    }
-
-            .mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {
-                        text-decoration: default;
-                        color: orange !important;
-                        pointer-events: auto;
-                        cursor: default;
-                    }
-
+        @media only screen and (max-width: 500px) {
+            #backgroundTable {
+                margin:10px auto;
+            }
+            table {
+                width: 100%;
+            }
+            table tr {
+                width: 100%;
+            }
+            table tr td {
+                width: 100%;
+                display: block;
+            }
+            table tr td img {
+                max-width: 100%;
+                height: auto;
+            }
+            p[class="lead"] {
+            font-size: 21px !important;
+            padding: 0 10px;
+            }
         }
 
-        /* More Specific Targeting */
 
-        @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-        /* You guessed it, ipad (tablets, smaller screens, etc) */
-            /* repeating for the ipad */
-            a[href^="tel"], a[href^="sms"] {
-                        text-decoration: none;
-                        color: blue; /* or whatever your want */
-                        pointer-events: none;
-                        cursor: default;
-                    }
 
-            .mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {
-                        text-decoration: default;
-                        color: orange !important;
-                        pointer-events: auto;
-                        cursor: default;
-                    }
-        }
-
-        @media only screen and (-webkit-min-device-pixel-ratio: 2) {
-        /* Put your iPhone 4g styles in here */
-        }
-
-        /* Android targeting */
-        @media only screen and (-webkit-device-pixel-ratio:.75){
-        /* Put CSS for low density (ldpi) Android layouts in here */
-        }
-        @media only screen and (-webkit-device-pixel-ratio:1){
-        /* Put CSS for medium density (mdpi) Android layouts in here */
-        }
-        @media only screen and (-webkit-device-pixel-ratio:1.5){
-        /* Put CSS for high density (hdpi) Android layouts in here */
-        }
-        /* end Android targeting */
 
     </style>
 
-    <!-- Targeting Windows Mobile -->
-    <!--[if IEMobile 7]>
-    <style type="text/css">
 
-    </style>
-    <![endif]-->
-
-    <!-- ***********************************************
-    ****************************************************
-    END MOBILE TARGETING
-    ****************************************************
-    ************************************************ -->
-
-    <!--[if gte mso 9]>
-        <style>
-        /* Target Outlook 2007 and 2010 */
-        </style>
-    <![endif]-->
 
     <!-- Build Newsletters template based on JSON -->
     <script src="js/mustache.js"></script>
@@ -168,28 +120,16 @@
 
 
 </head>
-<body>
+<body yahoo="true" style="background-color:#2B2A33;">
 
 <!-- Wrap contents in a script tag for mustach.js to work -->
 <script id="template" type="text/template">
 
 <!-- Wrapper/Container Table: Use a wrapper table to control the width and the background color consistently of your email. Use this approach instead of setting attributes on the body tag. -->
-<table {{table-default}} id="backgroundTable" style="{{font-family}}  {{table-fix}}">
+<table {{table-default}} id="backgroundTable" style="{{font-family}}  {{table-fix}} margin: 0 auto;">
     <tr>
         <td border-collapse: collapse;border:0; valign="top">
 
-
-
-        <table {{table-default}} align="center" style="{{table-fix}}">
-            <tr>
-                <td border-collapse: collapse;border:0; width="600" valign="middle" align="center">
-                    <p style="{{yahoo-p-fix}} font-size: 10px;">{{share-text}}:*|SHARE:facebook,twitter|* |
-                    <a href="*|ARCHIVE|*" target="_blank" style="color: {{link-color}};">{{view-in-browser-text}}</a> |
-                    <a href="*|UPDATE_PROFILE|*" target="_blank" style="color: {{link-color}};">{{change-language-text}}</a>
-                    </p>
-                </td>
-            </tr>
-        </table>
 
         <table {{table-default}} align="center" width="600" style="{{table-fix}} {{table-bg-color}}">
             <tr height="20"></tr>
@@ -202,7 +142,6 @@
                 </td>
                 {{/logo}}
             </tr>
-            <tr height="20"></tr>
         </table>
 
 
@@ -213,23 +152,37 @@
             <tr>
                 <td border-collapse: collapse;border:0; width="40" valign="top"></td>
                 <td border-collapse: collapse;border:0; width="520" valign="top" style="text-align:center;">
-                    {{#text-section}}
-                    {{#title}}
-                    {{/title}}
-                    {{#title}}
-                    <h1>{{title}}</h1>
-                    {{/title}}
-                    <p style="{{yahoo-p-fix}}">{{paragraph}}</p>
-                    {{/text-section}}
+                    <p class="lead" style="{{yahoo-p-fix}} color: white;  font-size: 26px;font-weight: 100;">Announcing</p>
                 </td>
                 <td border-collapse: collapse;border:0; width="40" valign="top"></td>
             </tr>
-            <tr height="20"></tr>
+        </table>
+
+
+
+        <table {{table-default}} align="center" width="600" style="{{table-fix}} {{table-bg-color}}">
+            <tr>
+                <td border-collapse: collapse;border:0; width="{{width}}" height="{{height}}" valign="top" align="center">
+                    <img src="{{path}}nas_logo.jpg" alt="nas" width="{{width}}" height="{{height}}" style="{{img-css}} {{img-fix-css}} {{img-link-css}}">
+                </td>
+            </tr>
         </table>
 
         <table {{table-default}} align="center" style="{{table-fix}} {{table-bg-color}}">
+            <tr>
+                <td border-collapse: collapse;border:0; width="40" valign="top"></td>
+                <td border-collapse: collapse;border:0; width="520" valign="top" style="text-align:center;">
+                    <h1>{{title}}</h1>
+                    <p class="lead" style="{{yahoo-p-fix}} color: white;  font-size: 26px;font-weight: 100;">Tickets on sale in May</p>
+                    <p class="lead" style="{{yahoo-p-fix}} color: white;  font-size: 26px;font-weight: 100;">Have you got your 2 for 1 discount yet ?</p>
+                </td>
+                <td border-collapse: collapse;border:0; width="40" valign="top"></td>
+            </tr>
+        </table>
+
+
+        <table {{table-default}} align="center" style="{{table-fix}} {{table-bg-color}}">
             {{#slide}}
-            <tr height="20"></tr>
             <tr>
                 <td border-collapse: collapse;border:0; width="{{width}}" valign="top">
                     <a href="{{link}}{{campaign}}" title="{{title}}">
@@ -241,18 +194,6 @@
         </table>
 
 
-        <table {{table-default}} align="center" style="{{table-fix}} {{table-bg-color}}">
-            {{#buttons}}
-            <tr height="20"></tr>
-            <tr>
-                <td border-collapse: collapse;border:0; width="600" valign="top">
-                    <a href="{{link}}{{campaign}}" title="{{text}}" style="text-transform:uppercase;background-color:{{bgcolor}}; color:{{textcolor}}; text-decoration:none; padding-top:20px;padding-bottom:20px;text-align: center;display:block;">
-                        {{text}}
-                    </a>
-                </td>
-            </tr>
-            {{/buttons}}
-        </table>
 
         </td>
     </tr>

@@ -1,6 +1,6 @@
 {
     "example": {
-        "path": "http://placehold.it/",
+        "path": "images/",
         "campaign": "/google-analytics",
         "share-text": "Share",
         "view-in-browser-text": "View in browser",
@@ -12,35 +12,21 @@
 
         "logo" : [
             {
-                "img" : "180x100/333333&text=Logo",
-                "link" : "www.karldoyle.ie",
+                "img" : "ws_logo.jpg",
+                "link" : "http://www.karldoyle.ie",
                 "title" : "test",
-                "height" : "100",
-                "width" : "180",
-                "align": "center"
-            }, {
-                "img" : "180x100/444444&text=Logo",
-                "link" : "www.karldoyle.ie",
-                "title" : "test",
-                "height" : "100",
-                "width" : "180",
-                "align": "center"
-            }, {
-                "img" : "180x100/444444&text=Logo",
-                "link" : "www.karldoyle.ie",
-                "title" : "test",
-                "height" : "100",
-                "width" : "180",
+                "height" : "59",
+                "width" : "117",
                 "align": "center"
             }
         ],
 
         "slide" : [
             {
-                "img" : "600x300/666666",
-                "link" : "www.karldoyle.ie",
+                "img" : "nas_image.jpg",
+                "link" : "http://www.karldoyle.ie",
                 "title" : "test",
-                "height" : "300",
+                "height" : "496",
                 "width" : "600"
             }
         ],
@@ -71,7 +57,7 @@
 
 
 
-        "table-bg-color": "background-color:#dddddd;",
+        "table-bg-color": "background-color:#373540;",
         "font-family": "font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;",
         "link-color": "blue",
 

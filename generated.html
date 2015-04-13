@@ -16,43 +16,16 @@
         /* Client-specific Styles */
         #outlook a {padding:0;} /* Force Outlook to provide a "view in browser" menu link. */
 
-        body{width:100% !important; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; margin:0; padding:0; font-family: 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;}
+        body{width:100% !important; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; margin:0; padding:0; font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;}
 
         /* Prevent Webkit and Windows Mobile platforms from changing default font sizes.*/
         .ExternalClass {width:100%;} /* Force Hotmail to display emails at full width */
         .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: 100%;}
 
         /* Forces Hotmail to display normal line spacing.  More on that: http://www.emailonacid.com/forum/viewthread/43/ */
-        #backgroundTable {margin:20px 0; padding:0; width:100% !important; line-height: 100% !important;}
+        #backgroundTable {margin:0 auto; padding:0; width:100% !important; line-height: 100% !important;}
         /* End reset */
 
-
-        /*
-
-        Some sensible defaults for images
-        ---------------------------------
-
-        img {{img-css}}
-        a img {{img-link-css}}
-        .image_fix {{img-fix-css}}
-
-
-        Yahoo paragraph fix
-        -------------------
-        p {{yahoo-p-fix}}
-
-
-        Hotmail header color reset
-        -------------------------------------
-        h1, h2, h3, h4, h5, h6 {{title-color}}
-        h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {{title-link-color}}
-
-
-        Remove spacing around Outlook 07, 10 tables
-        -------------------------------------------
-        table {{table-fix}}
-
-        */
         h1, h2, h3 {
             font-family: 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
             font-size: 24px;
@@ -60,6 +33,7 @@
             font-variant: normal;
             font-weight: 500;
             line-height: 26.3999996185303px;
+            color: white;
         }
 
         h1 a:active, h2 a:active,  h3 a:active, h4 a:active, h5 a:active, h6 a:active {
@@ -81,68 +55,7 @@
         a {color: orange;}
 
 
-        /***************************************************
-        ****************************************************
-        MOBILE TARGETING
-        ****************************************************
-        ***************************************************/
-        @media only screen and (max-device-width: 480px) {
-            /* Part one of controlling phone number linking for mobile. */
-            a[href^="tel"], a[href^="sms"] {
-                        text-decoration: none;
-                        color: blue; /* or whatever your want */
-                        pointer-events: none;
-                        cursor: default;
-                    }
-
-            .mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {
-                        text-decoration: default;
-                        color: orange !important;
-                        pointer-events: auto;
-                        cursor: default;
-                    }
-
-        }
-
-        /* More Specific Targeting */
-
-        @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-        /* You guessed it, ipad (tablets, smaller screens, etc) */
-            /* repeating for the ipad */
-            a[href^="tel"], a[href^="sms"] {
-                        text-decoration: none;
-                        color: blue; /* or whatever your want */
-                        pointer-events: none;
-                        cursor: default;
-                    }
-
-            .mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {
-                        text-decoration: default;
-                        color: orange !important;
-                        pointer-events: auto;
-                        cursor: default;
-                    }
-        }
-
-        @media only screen and (-webkit-min-device-pixel-ratio: 2) {
-        /* Put your iPhone 4g styles in here */
-        }
-
-        /* Android targeting */
-        @media only screen and (-webkit-device-pixel-ratio:.75){
-        /* Put CSS for low density (ldpi) Android layouts in here */
-        }
-        @media only screen and (-webkit-device-pixel-ratio:1){
-        /* Put CSS for medium density (mdpi) Android layouts in here */
-        }
-        @media only screen and (-webkit-device-pixel-ratio:1.5){
-        /* Put CSS for high density (hdpi) Android layouts in here */
-        }
-        /* end Android targeting */
-
-
-
-        @media (max-width: 500px) {
+        @media only screen and (max-width: 500px) {
             table {
                 width: 100%;
             }
@@ -151,115 +64,92 @@
             }
             table tr td {
                 width: 100%;
-                height: auto;
-                display: block !important;
+                display: block;
             }
-            img {
+            table tr td img {
                 max-width: 100%;
                 height: auto;
             }
+            p[class="lead"] {
+            font-size: 21px !important;
+            padding: 0 10px;
+            }
         }
+
+
+
+
     </style>
 
 
-    <!-- Targeting Windows Mobile -->
-    <!--[if IEMobile 7]>
-    <style type="text/css">
-
-    </style>
-    <![endif]-->
-
-
-</head>
-<body>
+<style type="text/css"></style></head>
+<body yahoo="true" style="background-color: rgb(43, 42, 51);">
 
 <!-- Wrapper/Container Table: Use a wrapper table to control the width and the background color consistently of your email. Use this approach instead of setting attributes on the body tag. -->
-<table cellpadding="'0'" cellspacing="'0'" border="'0'" id="backgroundTable" style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;  bordeR:0;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+<table cellpadding="'0'" cellspacing="'0'" border="'0'" id="backgroundTable" style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;  bordeR:0;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; margin: 50px auto;">
     <tbody><tr>
         <td border-collapse:="" collapse;border:0;="" valign="top">
 
 
-
-        <table cellpadding="'0'" cellspacing="'0'" border="'0'" align="center" style="bordeR:0;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
-            <tbody><tr>
-                <td border-collapse:="" collapse;border:0;="" width="600" valign="middle" align="center">
-                    <p style="margin: 1em 0; font-size: 10px;">Share:*|SHARE:facebook,twitter|* |
-                    <a href="*|ARCHIVE|*" target="_blank" style="color: blue;">View in browser</a> |
-                    <a href="*|UPDATE_PROFILE|*" target="_blank" style="color: blue;">Change Language</a>
-                    </p>
-                </td>
-            </tr>
-        </tbody></table>
-
-        <table cellpadding="'0'" cellspacing="'0'" border="'0'" align="center" width="600" style="bordeR:0;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; background-color:#dddddd;">
+        <table cellpadding="'0'" cellspacing="'0'" border="'0'" align="center" width="600" style="bordeR:0;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; background-color:#373540;">
             <tbody><tr height="20"></tr>
             <tr>
-                <td border-collapse:="" collapse;border:0;="" width="180" height="100" valign="top" align="center">
-                    <a href="www.karldoyle.ie/google-analytics" title="test">
-                        <img src="http://placehold.it/180x100/333333&amp;text=Logo" alt="test" width="180" height="100" style="outline:none; text-decoration:none; -ms-interpolation-mode: bicubic; display:block; border:none;">
-                    </a>
-                </td>
-                <td border-collapse:="" collapse;border:0;="" width="180" height="100" valign="top" align="center">
-                    <a href="www.karldoyle.ie/google-analytics" title="test">
-                        <img src="http://placehold.it/180x100/444444&amp;text=Logo" alt="test" width="180" height="100" style="outline:none; text-decoration:none; -ms-interpolation-mode: bicubic; display:block; border:none;">
-                    </a>
-                </td>
-                <td border-collapse:="" collapse;border:0;="" width="180" height="100" valign="top" align="center">
-                    <a href="www.karldoyle.ie/google-analytics" title="test">
-                        <img src="http://placehold.it/180x100/444444&amp;text=Logo" alt="test" width="180" height="100" style="outline:none; text-decoration:none; -ms-interpolation-mode: bicubic; display:block; border:none;">
+                <td border-collapse:="" collapse;border:0;="" width="117" height="59" valign="top" align="center">
+                    <a href="http://www.karldoyle.ie/google-analytics" title="test">
+                        <img src="images/ws_logo.jpg" alt="test" width="117" height="59" style="outline:none; text-decoration:none; -ms-interpolation-mode: bicubic; display:block; border:none;">
                     </a>
                 </td>
             </tr>
-            <tr height="20"></tr>
         </tbody></table>
 
 
 
 
 
-        <table cellpadding="'0'" cellspacing="'0'" border="'0'" align="center" style="bordeR:0;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; background-color:#dddddd;">
+        <table cellpadding="'0'" cellspacing="'0'" border="'0'" align="center" style="bordeR:0;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; background-color:#373540;">
             <tbody><tr>
                 <td border-collapse:="" collapse;border:0;="" width="40" valign="top"></td>
                 <td border-collapse:="" collapse;border:0;="" width="520" valign="top" style="text-align:center;">
-                    <h1>Example Title</h1>
-                    <p style="margin: 1em 0;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni sunt asperiores veniam debitis laudantium quod fugit dolores ea nobis officia cupiditate quibusdam nesciunt mollitia vitae, sit natus fugiat officiis</p>
-                    <p style="margin: 1em 0;">explicabo aliquam voluptatum deserunt dignissimos a reiciendis laboriosam? Neque ratione quod labore est sint repellendus, quaerat eaque, qui veniam architecto tenetur eos perferendis quisquam nesciunt odit autem at non. Quos quasi dolorum iste hic minus nulla possimus soluta error, animi aliquam.</p>
+                    <p class="lead" style="margin: 1em 0; color: white;  font-size: 26px;font-weight: 100;">Announcing</p>
                 </td>
                 <td border-collapse:="" collapse;border:0;="" width="40" valign="top"></td>
             </tr>
-            <tr height="20"></tr>
         </tbody></table>
 
-        <table cellpadding="'0'" cellspacing="'0'" border="'0'" align="center" style="bordeR:0;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; background-color:#dddddd;">
-            <tbody><tr height="20"></tr>
-            <tr>
+
+
+        <table cellpadding="'0'" cellspacing="'0'" border="'0'" align="center" width="600" style="bordeR:0;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; background-color:#373540;">
+            <tbody><tr>
+                <td border-collapse:="" collapse;border:0;="" width="" height="" valign="top" align="center">
+                    <img src="images/nas_logo.jpg" alt="nas" width="" height="" style="outline:none; text-decoration:none; -ms-interpolation-mode: bicubic; display:block; border:none;">
+                </td>
+            </tr>
+        </tbody></table>
+
+        <table cellpadding="'0'" cellspacing="'0'" border="'0'" align="center" style="bordeR:0;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; background-color:#373540;">
+            <tbody><tr>
+                <td border-collapse:="" collapse;border:0;="" width="40" valign="top"></td>
+                <td border-collapse:="" collapse;border:0;="" width="520" valign="top" style="text-align:center;">
+                    <h1></h1>
+                    <p class="lead" style="margin: 1em 0; color: white;  font-size: 26px;font-weight: 100;">Tickets on sale in May</p>
+                    <p class="lead" style="margin: 1em 0; color: white;  font-size: 26px;font-weight: 100;">Have you got your 2 for 1 discount yet ?</p>
+                </td>
+                <td border-collapse:="" collapse;border:0;="" width="40" valign="top"></td>
+            </tr>
+        </tbody></table>
+
+
+        <table cellpadding="'0'" cellspacing="'0'" border="'0'" align="center" style="bordeR:0;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; background-color:#373540;">
+            <tbody><tr>
                 <td border-collapse:="" collapse;border:0;="" width="600" valign="top">
-                    <a href="www.karldoyle.ie/google-analytics" title="test">
-                        <img src="http://placehold.it/600x300/666666" alt="test" width="600" height="300" style="outline:none; text-decoration:none; -ms-interpolation-mode: bicubic; display:block; border:none;">
+                    <a href="http://www.karldoyle.ie/google-analytics" title="test">
+                        <img src="images/nas_image.jpg" alt="test" width="600" height="496" style="outline:none; text-decoration:none; -ms-interpolation-mode: bicubic; display:block; border:none;">
                     </a>
                 </td>
             </tr>
         </tbody></table>
 
 
-        <table cellpadding="'0'" cellspacing="'0'" border="'0'" align="center" style="bordeR:0;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; background-color:#dddddd;">
-            <tbody><tr height="20"></tr>
-            <tr>
-                <td border-collapse:="" collapse;border:0;="" width="600" valign="top">
-                    <a href="karldoyle.ie/google-analytics" title="Lorem ipsum dolor." style="text-transform:uppercase;background-color:black; color:white; text-decoration:none; padding-top:20px;padding-bottom:20px;text-align: center;display:block;">
-                        Lorem ipsum dolor.
-                    </a>
-                </td>
-            </tr>
-            <tr height="20"></tr>
-            <tr>
-                <td border-collapse:="" collapse;border:0;="" width="600" valign="top">
-                    <a href="karldoyle.ie/google-analytics" title="Lorem ipsum dolor." style="text-transform:uppercase;background-color:green; color:black; text-decoration:none; padding-top:20px;padding-bottom:20px;text-align: center;display:block;">
-                        Lorem ipsum dolor.
-                    </a>
-                </td>
-            </tr>
-        </tbody></table>
 
         </td>
     </tr>
